@@ -1,0 +1,27 @@
+2024-06-20 18:11:43,696 - INFO - The word 'file' was found 26 times in the file.
+2024-06-20 18:11:43,696 - INFO - Line 9: A class to search for a specific word in a file and log the occurrences.
+2024-06-20 18:11:43,697 - INFO - Line 12: def __init__(self, file_path, word, log_level='info', log_file='app.log'):
+2024-06-20 18:11:43,697 - INFO - Line 14: Initializes the FileSearcher with the file path, word to search, log level, and log file.
+2024-06-20 18:11:43,698 - INFO - Line 17: file_path (str): The path to the file to be searched.
+2024-06-20 18:11:43,698 - INFO - Line 18: word (str): The word to search for in the file.
+2024-06-20 18:11:43,698 - INFO - Line 20: log_file (str): The file to write log messages to (default is 'app.log').
+2024-06-20 18:11:43,698 - INFO - Line 22: self.file_path = file_path
+2024-06-20 18:11:43,699 - INFO - Line 24: self.log_file = log_file
+2024-06-20 18:11:43,699 - INFO - Line 46: logging.FileHandler(self.log_file),
+2024-06-20 18:11:43,699 - INFO - Line 50: def search_word_in_file(self):
+2024-06-20 18:11:43,700 - INFO - Line 52: Searches for the specified word in the file and logs the occurrences.
+2024-06-20 18:11:43,700 - INFO - Line 63: with open(self.file_path, 'r') as file:
+2024-06-20 18:11:43,700 - INFO - Line 64: for i, line in enumerate(file, 1):
+2024-06-20 18:11:43,700 - INFO - Line 68: logging.error(f"The file {self.file_path} was not found.")
+2024-06-20 18:11:43,701 - INFO - Line 75: logging.info(f"The word '{self.word}' was found {len(occurrences)} times in the file.")
+2024-06-20 18:11:43,703 - INFO - Line 79: logging.info(f"The word '{self.word}' was not found in the file.")
+2024-06-20 18:11:43,703 - INFO - Line 87: Parses command-line arguments and initiates the word search in the specified file.
+2024-06-20 18:11:43,703 - INFO - Line 90: file_path (str): Path to the file to be searched.
+2024-06-20 18:11:43,704 - INFO - Line 91: word (str): The word to search for in the file.
+2024-06-20 18:11:43,704 - INFO - Line 93: --logfile (str): The file to write log messages to.
+2024-06-20 18:11:43,704 - INFO - Line 98: parser = argparse.ArgumentParser(description="Search for a word in a file.")
+2024-06-20 18:11:43,705 - INFO - Line 99: parser.add_argument('file_path', type=str, help="Path to the file to be searched.")
+2024-06-20 18:11:43,705 - INFO - Line 100: parser.add_argument('word', type=str, help="The word to search for in the file.")
+2024-06-20 18:11:43,705 - INFO - Line 102: parser.add_argument('--logfile', type=str, default="app.log", help="The file to write log messages to.")
+2024-06-20 18:11:43,706 - INFO - Line 106: file_searcher = FileSearcher(args.file_path, args.word, args.log, args.logfile)
+2024-06-20 18:11:43,706 - INFO - Line 107: file_searcher.search_word_in_file()
